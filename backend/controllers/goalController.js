@@ -82,8 +82,6 @@ const deleteGoal = asyncHandler( async (req, res) => {
     }
 
     //Make sure the logged in user matches the goal user
-    console.log(goal.user.toString())
-    console.log(user.id)
     if(goal.user.toString() !== user.id){
         res.status(401)
         throw new Error('User not authorized')
